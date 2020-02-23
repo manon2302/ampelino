@@ -1,0 +1,91 @@
+/*
+
+fichier asset/css/majeur.css
+
+*/
+
+/*******************/
+/* STYLE GENERIQUE */
+/*******************/
+
+
+
+html{
+	
+	font-size: 14px;
+	background-color: #B32439;	
+}
+
+.logo{
+	max-width: 20%;
+	height: auto;
+}
+
+
+h1{
+	position:center;
+	color: white;
+	text-align: center;
+}
+
+h1 { font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 50px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; }  blockquote { font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+
+p { font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 50px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px;
+color: white; 
+text-align: center;
+/* padding: 200px; */
+}
+
+
+button {
+	max-width: 10%;
+	height: auto;
+	position: absolute;
+	max-width: 5%;	
+	left: 990px;
+	top: 466px;
+	z-index: 3;
+	border-radius: 50px;
+}
+
+.rectangle {
+	position: absolute;
+	max-width: 5%;
+	height: auto;
+	left: 990px;
+	top: 466px;
+}
+
+#background-rectangle {
+	height: 150px;
+	width: 20px;
+	background-color: white;
+	border-radius: 50px;
+}
+
+#circle-selector {
+	cursor: pointer;
+	position: relative;
+	width: 18px;
+	height: 18px;
+	left: 1px;
+	top: 1px;
+	border-radius: 50%;
+	background-color: #B32439;
+	transition: all 1s;
+}
+
+.animated-circle {
+	transform: translate(0px, 130px);
+}
+
+#old-enough {
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+

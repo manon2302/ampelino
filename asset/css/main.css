@@ -1,0 +1,499 @@
+/*
+
+fichier assets/css/main.css
+
+*/
+
+@font-face {
+	font-family: "SourceSansPro";
+
+	src: url("../fonts/SourceSansPro-Regular.woff") format("woff"),
+		url("../fonts/SourceSansPro-Regular.woff2") format("woff2"); 
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "SourceSansPro";
+
+	src: url("../fonts/SourceSansPro-Bold.woff") format("woff"),
+		url("../fonts/SourceSansPro-Bold.woff2") format("woff2"); 
+	font-weight: bold;
+}
+/*******************/
+/* STYLE GENERIQUE */
+/*******************/
+
+
+
+html{
+	font-family: "SourceSansPro", "Times New Romans", serif;
+	font-size: 14px;
+	
+}
+body{
+	line-height: 1.5;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+a:hover,
+.button:hover,
+#burger:hover,
+#close:hover{
+	color: var(--hover);
+}
+/* on fait en sorte que la typo Font Awesome ne s'applique QUE sur les icônes */
+.fa, .fab, .fad, .fal, .far, .fas{
+	font-family: "SourceSansPro";
+}
+.fa::before,
+.fad::before,
+.fal::before,
+.far::before,
+.fas::before{
+	font-family: "Font Awesome 5 Free";
+}
+.fab::before{
+	font-family: "Font Awesome 5 Brands";
+}
+
+/****************/
+/*    HEADER    */
+/****************/
+header{
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	letter-spacing: 3px;
+}
+header h1 span{
+	background: var(--white);
+	color: var(--main);
+	padding: 2px 5px;
+}
+header h1:hover span{
+	background: var(--hover);
+}
+#burger{
+	background: none;
+	color: inherit;
+	border: none;
+	text-transform: inherit;
+	font-size: inherit;
+	letter-spacing: inherit;
+	display: flex;
+	flex-direction: row-reverse;
+}
+#burger::before{
+	margin-left: 10px;
+}
+nav{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 15;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	background: var(--navBk);
+}
+.navOpen nav{
+	display: flex;
+}
+nav ul{
+	width: 280px;
+	text-align: center;
+}
+nav button + ul li{
+	border-bottom: 2px solid var(--navLine);
+	padding: 15px;
+}
+nav button + ul li:last-child{
+	border-bottom: none;
+}
+nav ul:last-child li{
+	margin: 20px 0;
+}
+nav .button{
+	width: 100%;
+	justify-content: center;
+}
+#close{
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	font-size: 2rem;
+	width: 35px;
+	height: 32px;
+	overflow: hidden;
+	background: none;
+	border: none;
+	color: var(--white);
+}
+#close::before{
+	display: block;
+}
+
+/***************/
+/*    INTRO    */
+/***************/
+.intro{
+	background: url(../img/banner.jpg) no-repeat 50% 50% / cover;
+	padding: 250px 80px;
+	position: relative;
+}
+.intro::before{
+	content:'';
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: var(--main);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	opacity: 0.7;
+}
+/* on parle aux fils directs de .intro */
+.intro > *{
+	position: relative;
+	z-index: 2;
+}
+.intro h1{
+	font-size: 3rem;
+	border-bottom: 2px solid var(--white);
+	padding-bottom: 20px;
+	margin-bottom: 30px;
+}
+.intro div{
+	display: flex;
+	justify-content: space-between;
+}
+.intro p{
+	width: 48%;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+/***************/
+/*   BUTTONS   */
+/***************/
+.button{
+	border: 2px solid var(--white);
+	padding: 10px 25px;
+	display: inline-flex;
+	align-items: center;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	background: none;
+	color: var(--white);
+}
+.button:hover{
+	border-color: var(--hover);
+}
+.full{
+	background: var(--white);
+	color: var(--main);
+}
+.full:hover{
+	background: var(--hover);
+	color: var(--main);
+}
+.arrow::after{
+	content: url(../img/arrow-white.svg);
+	margin-left: 10px;
+	display: block;
+	height: 24px;
+}
+.arrow:hover::after{
+	content: url(../img/arrow-blue.svg);
+}
+.duo{
+	display: flex;
+	flex-wrap: wrap;
+}
+.duo article{
+	width: 40%;
+	background: 50% 50% / cover no-repeat;
+	min-height: 300px;
+	padding: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	position: relative;
+}
+.duo article::before{
+	content:'';
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: var(--color1);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	opacity: 0.7;
+	transition: opacity 0.5s;
+}
+.duo article:hover::before{
+	opacity: 0;
+}
+.duo article > *{
+	position: relative;
+	z-index: 2;
+}
+.duo h1{
+	font-size: 2rem;
+	border-bottom: 2px solid var(--white);
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	padding-right: 40px;
+}
+.duo p{
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+
+/* on met les articles n°2 et 3 pour chaque série de 4, à la bonne longueur */
+.duo article:nth-child(4n+2),
+.duo article:nth-child(4n+3){
+	width: 60%;
+}
+.duo article:nth-child(6n+1){
+	background-image: url(../img/pic01.jpg);
+}
+.duo article:nth-child(6n+2){
+	background-image: url(../img/pic02.jpg);
+}
+.duo article:nth-child(6n+3){
+	background-image: url(../img/pic03.jpg);
+}
+.duo article:nth-child(6n+4){
+	background-image: url(../img/pic04.jpg);
+}
+.duo article:nth-child(6n+5){
+	background-image: url(../img/pic05.jpg);
+}
+.duo article:nth-child(6n){
+	background-image: url(../img/pic06.jpg);
+}
+
+.duo article:nth-child(6n+2)::before{
+	background: var(--color2);
+}
+.duo article:nth-child(6n+3)::before{
+	background: var(--color3);
+}
+.duo article:nth-child(6n+4)::before{
+	background: var(--color4);
+}
+.duo article:nth-child(6n+5)::before{
+	background: var(--color5);
+}
+.duo article:nth-child(6n)::before{
+	background: var(--color6);
+}
+.single{
+	background: var(--secondary);
+	padding: 100px 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.single h1{
+	font-size: 2rem;
+	border-bottom: 2px solid var(--white);
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	padding-right: 40px;
+}
+.single.solo h1{
+	font-size: 3rem;
+	margin-bottom: 30px;
+}
+.single figure{
+	width: 100%;
+	margin-bottom: 40px;
+}
+.single p{
+	margin-bottom: 40px;
+}
+.single p:last-child{
+	margin-bottom: 0;
+}
+footer article:first-child{
+	display: flex;
+	border-bottom: 2px solid var(--secondary);
+}
+footer form{
+	width: 60%;
+	padding: 50px;
+	border-right: 2px solid var(--secondary);
+}
+footer form div{
+	display: flex;
+	justify-content: space-between;
+}
+footer form div p{
+	width: 48%;
+}
+footer label{
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	display: block;
+	margin-bottom: 10px;
+}
+footer form p{
+	margin-bottom: 30px;
+}
+footer form p:last-child{
+	margin-bottom: 0;
+}
+input,
+textarea{
+	background: var(--secondary);
+	border: none;
+	display: block;
+	width: 100%;
+	padding: 5px;
+	color: inherit;
+	font-family: inherit;
+}
+textarea{
+	resize: vertical;
+	min-height: 100px;
+}
+footer button{
+	margin-right: 20px;
+}
+
+/* on parle à la liste des infos de contact, il y a plusieurs sélecteurs possibles:
+#contact
+footer article:first-child ul
+footer form + ul  <-- le ul juste après un form
+*/
+#contact {
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+}
+#contact li{
+	border-bottom: 2px solid var(--secondary);
+	flex-grow: 1;
+	padding: 30px 30px 30px 80px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+#contact li:last-child{
+	border-bottom: none;
+}
+.label{
+	font-size: 1.2rem;
+	margin-bottom: 10px;
+	position: relative;
+}
+.label::before{
+	background: var(--white);
+	color: var(--main);
+	display: flex;
+	width: 40px;
+	height: 40px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	position: absolute;
+	top: -10px;
+	left: -60px;
+}
+
+footer article:last-child{
+	padding: 50px;
+}
+
+footer article:last-child ul{
+	display: flex;
+	margin-bottom: 30px;
+}
+footer article:last-child ul li{
+	margin-right: 20px;
+}
+footer article:last-child ul:last-child{
+	margin-bottom: 0;
+	color: var(--footerCnt);
+}
+footer article:last-child ul:last-child li{
+	border-right: 1px solid var(--footerCnt);
+	padding-right: 20px;
+}
+footer article:last-child ul:last-child li:last-child{
+	border-right: none;
+	margin-right: 0;
+	padding-right: 0;
+}
+footer article:last-child ul:last-child a{
+	border-bottom: 1px dotted var(--footerCnt);
+}
+
+.fab::before{
+	background: var(--white);
+	color: var(--main);
+	display: flex;
+	width: 30px;
+	height: 30px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+}
+.fab:hover::before{
+	background: var(--hover);
+}
+.social{
+	display: none;
+}
+
+
+/* changements à faire lorsque l'écran est plus petit que 960px */
+@media screen and (max-width: 960px) {
+	.duo article:nth-child(n){
+		width: 50%;
+	}
+}
+
+/* changements à faire lorsque l'écran est plus petit que 600px */
+@media screen and (max-width: 600px) {
+	.duo article:nth-child(n){
+		width: 100%;
+	}
+
+	footer article:first-child{
+		flex-direction: column;
+	}
+	footer form{
+		width: 100%;
+		border-right: none;
+		border-bottom: 2px solid var(--secondary);
+	}
+	#contact{
+		width: 100%;
+	}
+	#contact li{
+		padding-left: 140px;
+	}
+	.intro div{
+		flex-direction: column;
+	}
+	.intro p{
+		width: 100%;
+		margin-bottom: 20px;
+	}
+}
